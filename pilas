@@ -1,0 +1,121 @@
+package PilasAbc;
+
+import java.util.Scanner;
+
+
+public class PilasAbc{
+
+    private static int i;
+
+    
+    public static void main(String[] args) {
+        System.out.println("bienvenido a pilas A,B,C");
+      Scanner leer=new Scanner(System.in);
+       int opcion, tam, cont=-200+200,aux;
+       
+     
+      boolean encontrado= false;  
+ 
+      
+      System.out.println("ingresa el valor de la pila A: ");
+      tam=leer.nextInt();
+       System.out.println("ingresa el valor de la pila B: ");
+      tam=leer.nextInt();
+     int[] list3 = new int[ tam + tam];
+      
+                        
+      int list[]= new int [tam];
+      int list2[]=new int[tam];
+    
+      do{
+          
+          System.out.println("1-mostrar ");
+          System.out.println("2-llenar");
+          System.out.println("3-vaciar ");
+          System.out.println("4-ordenar");
+          System.out.println("5-salir");
+          opcion = leer.nextInt();
+          
+          
+          switch (opcion){
+              
+           
+               
+                  
+              case 1:
+                  
+                     System.out.print("llenar pilaA: ");
+                   for(int i=0;i<tam;i++){
+         list[i]=200+(int)(Math.random()*(-200));
+        
+                  System.out.println("\n"+list[i]);
+                  }
+                 System.out.print("llenar pilaB: ");
+                 for(int i=0;i<tam;i++){
+         list2[i]=200+(int)(Math.random()*(-200));
+         
+                  System.out.println("\n"+list2[i]);
+                 }
+         System.out.print("llenar pila C: ");
+         list3[i]=list[i]+list2[i];
+         for(int i=0;i<tam+tam;i ++){
+             
+         list3[i]=200+(int)(Math.random()*(-200));
+         
+                  System.out.println("\n"+list3[i]);
+         }
+                  break;
+                  
+              case 2:
+           System.out.println("Los datos son: ");
+                  
+                                      
+                    for (i = 0; i < tam; i++) {
+                        list3[i] = list[i];
+                        System.out.println(" " + list[i]);
+                        list3[i] = list2[i];
+                        System.out.println(" " + list2[i]);
+                    }
+
+                    
+                    break;
+              case 3:
+                  
+                  if (cont> 0) {
+                       System.out.println("dato elmininado");
+                        cont--;  
+                                             
+                    } else {
+                        System.out.println("datos vacios");
+                    }
+                    break;
+              case 4: 
+                  System.out.println("datos ordenados");
+      
+                  for (int j = 0; j < tam; j++) {
+                        for (i = 0; i < tam - 1; i++) {
+                            if (list[i] > list[i + 1]) {
+                                
+                            }
+                        }
+                    }
+                    int R=0;
+                    
+                    while(R<tam)
+                    {
+                     System.out.println(list2[R]);
+                     System.out.println(list[R]);
+                     R++;
+                    }
+                    break;
+              case 5:
+                   
+                  System.out.println(" salir ------> de pilas A,B,C ");
+                    break;
+                  
+              
+          
+          }}while(opcion!=5 );
+    }
+    
+}
